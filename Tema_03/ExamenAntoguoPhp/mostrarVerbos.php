@@ -9,9 +9,11 @@
     <h1>Lista de Verebos</h1>
     <table>
         <thead>
-            <th>Infinitivo</th>
-            <th>Conjugación</th>
-            <th>Presente del indicativo</th>
+            <tr>
+                <th>Infinitivo</th>
+                <th>Conjugación</th>
+                <th>Presente del indicativo</th>
+            </tr>
         </thead>
         <tbody>
 <?php
@@ -19,14 +21,16 @@ include_once 'utils.php';
 session_start();
 if(isset($_SESSION['verbos'])) {
     foreach($_SESSION['verbos'] as $verbo) {
-        echo `<td>$verbo</td>`;
+        echo "<tr>";
+        echo "<td>$verbo</td>";
         echo '<td>' . conjugacion($verbo) . '</td>';
-        echo '<td>' .  conjugar($verbo) . '</td>';
+        echo '<td>' . conjugar($verbo) . '</td>';
+        echo "</tr>";
     }
 }
 ?>
         </tbody>
-        <button onclick="window.location.href='index.php'">Volver al inicio</button>
     </table>
+    <button onclick="window.location.href='index.php'">Volver al inicio</button>
 </body>
 </html>
