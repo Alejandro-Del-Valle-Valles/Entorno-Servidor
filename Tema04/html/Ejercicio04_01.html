@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/Ejercicio04.css">
+    <title>Ejercicio04 Inicio</title>
+</head>
+<body>
+    <form>
+        <!-- Languages -->
+        <input type="radio" name="language" value="es" id="spanish" checked>
+        <label for="spanish"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/1920px-Flag_of_Spain.svg.png" alt="Español"></label>
+        <input type="radio" name="language" value="en" id="english">
+        <label for="english"><img src="https://www.banderas-mundo.es/data/flags/w1600/gb.png" alt="English"></label><br>
+        <div class="separator"></div>
+
+        <!-- Login -->
+        <label for="name" id="name-label">Nombre: </label>
+        <input type="text" id="name" required><br>
+        <label for="password" id="pwd-label">Contraseña: </label>
+        <input type="text" id="password" required><br>
+        <label id="error"></label>
+        <input type="button" id="login" value="Iniciar Sesión">
+    </form>
+</body>
+<script src="/script/Ejercicio04_01.js" defer></script>
+</html>
+<!-- Author Lua DeVV -->
