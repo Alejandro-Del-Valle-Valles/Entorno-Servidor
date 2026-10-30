@@ -11,26 +11,47 @@
         Nombre: <input type="text" name="name" required><br>
         Precio: <input type="text" name="price" required><br>
         <input type="submit" value="Insertar" id="insert">
-    </form>
-    
-    </table>   
+    </form><br>
 </body>
 </html>
 
 <?php
 include_once 'Utils.php';
-
 session_start();
-if(!isset($_POST['name']) && !isset($_POST['price'])) exit();
-
+session_destroy();
 $db = connectDB();
+if(!isset($_POST['name']) && !isset($_POST['price'])) {
+    echo createTable($db);
+    exit();  
+} 
+
 $data = [$_POST['name'], $_POST['price']];
 
 try {
     $stmt = $db->prepare('INSERT INTO producto (nombre, precio) VALUES (?, ?)');
     $stmt->execute($data);
-    print('Insertado correctamente');
+    if($data) { 
+        echo createTable($db);
+    } else {
+        echo 'No se ha podido obtener los datos de la BBDD';
+    }
 } catch(PDOException $ex) {
     print('Error al insertar');
+}
+
+function createTable($db) {
+    $stmt = $db->query('SELECT * FROM producto');
+    $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    $table = '<table>';
+    foreach ($data as $line) {
+        $table .= '<tr>'
+            . '<td>' . htmlspecialchars($line['nombre']) . '</td>'
+            . '<td>' . htmlspecialchars((string) $line['precio']) . '</td>'
+            . '</tr>';
+    }
+    $table .= '</table>';
+
+    return $table;
 }
 ?>
