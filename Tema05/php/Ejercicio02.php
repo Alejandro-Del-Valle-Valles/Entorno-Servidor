@@ -17,8 +17,6 @@
 
 <?php
 include_once 'Utils.php';
-session_start();
-session_destroy();
 $db = connectDB();
 if(!isset($_POST['name']) && !isset($_POST['price'])) {
     echo createTable($db);
