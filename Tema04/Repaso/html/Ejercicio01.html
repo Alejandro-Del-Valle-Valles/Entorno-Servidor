@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 01</title>
+</head>
+<body>
+    <h1>Lista ToDo</h1>
+    Introduce la tarea: <input type="text" id="tarea"><br>
+    Introduce la prioridad:
+    <select id="prioridad">
+        <option value="baja">Baja</option>
+        <option value="normal">Normal</option>
+        <option value="alta">Alta</option>
+    </select><br>
+    <input type="button" id="crear" value="Añadir tarea"><br>
+
+    <h2>Tareas por hacer</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Tarea</th>
+                <th>Prioridad</th>
+            </tr>
+        </thead>
+        <tbody id="cuerpo-tabla">
+            <!-- Tareas por hacer -->
+        </tbody>
+    </table>
+</body>
+<script src="/js/Ejercicio01.js"></script>
+</html>
