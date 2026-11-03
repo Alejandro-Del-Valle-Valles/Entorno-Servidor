@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 03</title>
+</head>
+<body>
+    <h1>Lista de deseos</h1>
+    Introduce el producto: <input type="text" id="producto"><br>
+    Introduce el precio: <input type="number" id="precio" min="0" value="0"><br>
+    Introduce la prioridad:
+    <select id="prioridad">
+        <option value="baja" selected>Baja</option>
+        <option value="media">Media</option>
+        <option value="alta">Alta</option>
+    </select><br>
+    <input type="button" id="crear" value="Añadir deseo"><br>
+
+    <h2>Lista</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Prioridad</th>
+            </tr>
+        </thead>
+        <tbody id="cuerpo">
+            <!-- Deseos -->
+        </tbody>
+    </table>
+</body>
+<script src="/js/Ejercicio03.js"></script>
+</html>
