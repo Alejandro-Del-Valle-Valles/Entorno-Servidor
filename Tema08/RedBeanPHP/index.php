@@ -1,3 +1,3 @@
 <?php
-header('Location: ./html/Ejercicio00.html');
+header('Location: ./php/Ejercicio00.php');
 ?>
