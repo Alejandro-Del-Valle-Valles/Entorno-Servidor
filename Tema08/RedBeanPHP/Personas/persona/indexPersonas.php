@@ -2,7 +2,7 @@
     require_once '../../lib/rb.php';
     R::setup('mysql:host=localhost;dbname=test', 'root', '');
     $personas = R::findAll('persona');
-    R::alias(['vivie' => 'pais', 'nace' => 'pais']);
+    R::alias(['vive' => 'pais', 'nace' => 'pais']);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -57,6 +57,7 @@
             <?php endforeach ?>
         </tbody>
     </table>
+    <input type="button" value="Volver al menú" onclick="window.location.href='../menu.html'">
 </body>
 </html>
 <!-- Author: Lua DeVV -->

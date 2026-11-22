@@ -35,6 +35,7 @@
             <?php endforeach ?>
         </tbody>
     </table>
+    <input type="button" value="Volver al menú" onclick="window.location.href='../menu.html'">
 </body>
 </html>
 <!-- Author: Lua DeVV -->

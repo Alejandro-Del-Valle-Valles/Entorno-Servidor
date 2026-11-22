@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
-    <title>Crear | Actualizar País</title>
-</head>
-<body>
-    <h1>Crear | Actualizar País</h1>
-</body>
-</html>
-<!-- Author: Lua DeVV -->
+<?php
+include_once '../../lib/rb.php';
+R::setup('mysql:host=localhost;dbname=test', 'root', '');
+$pais;
+$id = $_POST['id'];
+$nombre = $_POST['nombre'];
+if($id != '') $pais = R::load('pais', $id);
+else $pais = R::dispense('pais');
+$pais->nombre = $nombre;
+R::store($pais);
+header('Location: indexPaises.php');
+?>

@@ -12,7 +12,7 @@
     <title>Paises</title>
 </head>
 <body>
-    <input type="button" name="acction" value="Crear Pais" onclick="window.location.href='createUpdatePais.php';"/>
+    <input type="button" name="acction" value="Crear Pais" onclick="window.location.href='formPais.php';"/>
     <table>
         <caption>Paises</caption>
         <thead>
@@ -24,7 +24,7 @@
             <?php foreach($paises as $pais): ?>
                 <tr>
                     <td><?= $pais->nombre?></td>
-                    <td><input type="button" name="action" value="Actualizar" onclick="window.location.href='createUpdatePais.php?id=<?= $pais->id?>';"></td>
+                    <td><input type="button" name="action" value="Actualizar" onclick="window.location.href='formPais.php?id=<?= $pais->id?>';"></td>
                     <td>
                         <form action="deletePais.php" method="POST">
                             <input type="number" name="id" value="<?= $pais->id?>" hidden>
@@ -35,6 +35,7 @@
             <?php endforeach ?>
         </tbody>
     </table>
+    <input type="button" value="Volver al menú" onclick="window.location.href='../menu.html'">
 </body>
 </html>
 <!-- Author: Lua DeVV -->
