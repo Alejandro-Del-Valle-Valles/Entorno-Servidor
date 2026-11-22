@@ -2,7 +2,7 @@
     require_once '../../lib/rb.php';
     R::setup('mysql:host=localhost;dbname=test', 'root', '');
     $personas = R::findAll('persona');
-    R::alias(['vive' => 'pais', 'nace' => 'pais']);
+    R::aliases(['vive' => 'pais', 'nace' => 'pais']);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -13,7 +13,7 @@
     <title>Personas</title>
 </head>
 <body>
-    <input type="button" name="acction" value="Crear Persona" onclick="window.location.href='createUpdatePersona.php';"/>
+    <input type="button" name="acction" value="Crear Persona" onclick="window.location.href='formPersona.php';"/>
     <table>
         <caption>Personas</caption>
         <thead>
@@ -46,7 +46,7 @@
                             <?= $odio->aficion->nombre . ' ' ?>
                         <?php endforeach; ?>
                     </td>
-                    <td><input type="button" name="action" value="Actualizar" onclick="window.location.href='createUpdatePersona.php?id=<?= $persona->id?>';"></td>
+                    <td><input type="button" name="action" value="Actualizar" onclick="window.location.href='formPersona.php?id=<?= $persona->id?>';"></td>
                     <td>
                         <form action="deletePersona.php" method="POST">
                             <input type="number" name="id" value="<?= $persona->id?>" hidden>

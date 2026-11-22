@@ -24,6 +24,7 @@
         </lable><br>
         <input type="submit" value="Enviar">
     </form>
+    <button onclick="window.location.href='indexPaises.php';">Volver</button>
 </body>
 </html>
 <!-- Author: Lua DeVV -->
